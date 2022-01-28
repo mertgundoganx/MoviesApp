@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.mertgundoganx.moviesapp.data.model.MoviesResults
+import com.mertgundoganx.moviesapp.data.model.Movie
 import com.mertgundoganx.moviesapp.databinding.ItemMovieBinding
 
 class MoviesAdapter(
-    private val movieList: ArrayList<MoviesResults>,
+    private val movieList: ArrayList<Movie>,
     private val listener: OnItemClickListener
 ) : RecyclerView.Adapter<MoviesAdapter.ViewHolder>() {
 
@@ -50,7 +50,7 @@ class MoviesAdapter(
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateList(newMovieList: List<MoviesResults>) {
+    fun updateList(newMovieList: List<Movie>) {
         movieList.clear()
         movieList.addAll(newMovieList)
         notifyDataSetChanged()

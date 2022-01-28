@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import coil.load
 import com.mertgundoganx.moviesapp.databinding.MovieDetailsFragmentBinding
-import com.mertgundoganx.moviesapp.data.model.MoviesResults
+import com.mertgundoganx.moviesapp.data.model.Movie
 
 class MovieDetailsFragment : Fragment() {
 
@@ -30,13 +30,13 @@ class MovieDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val movieModel: MoviesResults = args.movie
+        val movieModel: Movie = args.movie
         loadMovieData(movieModel)
 
     }
 
     @SuppressLint("SetTextI18n")
-    private fun loadMovieData(movieModel: MoviesResults) {
+    private fun loadMovieData(movieModel: Movie) {
         binding.apply {
             movieTitle.text = movieModel.title
             movieImage.load("https://image.tmdb.org/t/p/original/${movieModel.poster_path}")

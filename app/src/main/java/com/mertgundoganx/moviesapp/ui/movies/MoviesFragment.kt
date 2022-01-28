@@ -10,8 +10,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.mertgundoganx.moviesapp.data.adapter.MoviesAdapter
-import com.mertgundoganx.moviesapp.data.model.Movies
-import com.mertgundoganx.moviesapp.data.model.MoviesResults
+import com.mertgundoganx.moviesapp.data.model.MoviesResponse
+import com.mertgundoganx.moviesapp.data.model.Movie
 import com.mertgundoganx.moviesapp.databinding.MoviesFragmentBinding
 import com.mertgundoganx.moviesapp.utils.Status
 
@@ -21,7 +21,7 @@ class MoviesFragment : Fragment(), MoviesAdapter.OnItemClickListener {
     private var _binding: MoviesFragmentBinding? = null
     private val binding get() = _binding!!
     private val moviesAdapter = MoviesAdapter(arrayListOf(), this)
-    private lateinit var movieList: Movies
+    private lateinit var movieList: MoviesResponse
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,7 +40,7 @@ class MoviesFragment : Fragment(), MoviesAdapter.OnItemClickListener {
     }
 
     override fun onItemClick(position: Int) {
-        val movie: MoviesResults = movieList.results[position]
+        val movie: Movie = movieList.results[position]
         goToMovie(movie)
     }
 
@@ -75,7 +75,7 @@ class MoviesFragment : Fragment(), MoviesAdapter.OnItemClickListener {
         }
     }
 
-    private fun goToMovie(movie: MoviesResults) {
+    private fun goToMovie(movie: Movie) {
         val action = MoviesFragmentDirections.actionMoviesFragmentToMovieDetailsFragment(movie)
         findNavController().navigate(action)
     }

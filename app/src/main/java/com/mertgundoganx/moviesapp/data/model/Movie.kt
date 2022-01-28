@@ -5,16 +5,16 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class MoviesResults(
+data class Movie(
     @SerializedName("id")
     val id: Int,
-    @SerializedName("overview")//
+    @SerializedName("overview")
     val overview: String,
-    @SerializedName("poster_path")//
+    @SerializedName("poster_path")
     val poster_path: String,
-    @SerializedName("release_date")//
+    @SerializedName("release_date")
     val release_date: String,
-    @SerializedName("title")//
+    @SerializedName("title")
     val title: String,
     @SerializedName("vote_average")
     val vote_average: Double,
