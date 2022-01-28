@@ -37,6 +37,26 @@ class MoviesFragment : Fragment(), MoviesAdapter.OnItemClickListener {
         setAdapter()
         getLiveData()
 
+        binding.apply {
+            buttonNext.setOnClickListener {
+                if (viewModel.currentPage.value == 500) {
+                    Toast.makeText(view.context, "MAX", Toast.LENGTH_SHORT).show()
+                } else {
+                    viewModel.nextPage()
+                    getLiveData()
+                }
+            }
+
+            buttonBack.setOnClickListener {
+                if (viewModel.currentPage.value == 1) {
+                    Toast.makeText(view.context, "MIN", Toast.LENGTH_SHORT).show()
+                } else {
+                    viewModel.backPage()
+                    getLiveData()
+                }
+            }
+        }
+
     }
 
     override fun onItemClick(position: Int) {
@@ -46,7 +66,7 @@ class MoviesFragment : Fragment(), MoviesAdapter.OnItemClickListener {
 
     private fun setAdapter() {
         binding.recylerView.apply {
-            layoutManager = GridLayoutManager(this.context, 3)
+            layoutManager = GridLayoutManager(this.context, 4)
             setHasFixedSize(true)
             adapter = moviesAdapter
         }
@@ -61,6 +81,7 @@ class MoviesFragment : Fragment(), MoviesAdapter.OnItemClickListener {
                             response.body()?.let { movies ->
                                 movieList = movies
                                 moviesAdapter.updateList(movies.results)
+                                binding.textPage.text = viewModel.currentPage.value.toString()
                             }
                         }
                     }
