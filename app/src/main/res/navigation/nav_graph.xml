@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/moviesFragment">
+
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.mertgundoganx.moviesapp.ui.movies.MoviesFragment"
+        android:label="Popular Movies"
+        tools:layout="@layout/movies_fragment">
+        <action
+            android:id="@+id/action_moviesFragment_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailsFragment"
+        android:name="com.mertgundoganx.moviesapp.ui.moviedetails.MovieDetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/movie_details_fragment">
+        <action
+            android:id="@+id/action_movieDetailsFragment_to_moviesFragment"
+            app:destination="@id/moviesFragment" />
+        <argument
+            android:name="movie"
+            app:argType="com.mertgundoganx.moviesapp.data.model.MoviesResults" />
+    </fragment>
+</navigation>
