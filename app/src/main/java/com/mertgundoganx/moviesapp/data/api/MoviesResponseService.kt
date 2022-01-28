@@ -9,7 +9,10 @@ import retrofit2.http.Query
 interface MoviesResponseService {
 
     @GET("movie/popular")
-    suspend fun getMovies(@Query("api_key") apiKey: String): Response<MoviesResponse>
+    suspend fun getMovies(
+        @Query("api_key") apiKey: String,
+        @Query("page") page: Int
+    ): Response<MoviesResponse>
 
     companion object {
         val service: MoviesResponseService by lazy {

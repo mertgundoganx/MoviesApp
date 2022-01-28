@@ -7,6 +7,6 @@ class MoviesRepository(private val moviesResponseService: MoviesResponseService)
 
     private val apiKey = BuildConfig.apiKey
 
-    suspend fun getMovies() = moviesResponseService.getMovies(apiKey)
+    suspend fun getMovies(page: Int) = moviesResponseService.getMovies(apiKey, page)
 
 }
