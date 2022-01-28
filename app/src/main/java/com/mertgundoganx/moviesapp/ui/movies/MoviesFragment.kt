@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.mertgundoganx.moviesapp.data.adapter.MoviesAdapter
+import com.mertgundoganx.moviesapp.ui.movies.adapter.MoviesAdapter
 import com.mertgundoganx.moviesapp.data.model.MoviesResponse
 import com.mertgundoganx.moviesapp.data.model.Movie
 import com.mertgundoganx.moviesapp.databinding.MoviesFragmentBinding

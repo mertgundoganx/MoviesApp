@@ -1,4 +1,4 @@
-package com.mertgundoganx.moviesapp.data.adapter
+package com.mertgundoganx.moviesapp.ui.movies.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
