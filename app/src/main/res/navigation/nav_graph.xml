@@ -24,6 +24,6 @@
             app:destination="@id/moviesFragment" />
         <argument
             android:name="movie"
-            app:argType="com.mertgundoganx.moviesapp.data.model.MoviesResults" />
+            app:argType="com.mertgundoganx.moviesapp.data.model.Movie" />
     </fragment>
 </navigation>
