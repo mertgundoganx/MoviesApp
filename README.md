@@ -2,8 +2,7 @@
 
 Movies App is a simple Android application written by Kotlin that shows popular movies and their details with API request.
 
-<img src="/previews/screenshot1.png"/>
-<img src="/previews/screenshot2.png"/>
+<img src="/previews/screenshot1.png" width="32%"/><img src="/previews/screenshot2.png" width="32%"/>
 
 ## Tech stack
 
