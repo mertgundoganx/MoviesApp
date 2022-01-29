@@ -14,7 +14,9 @@ import com.mertgundoganx.moviesapp.data.model.MoviesResponse
 import com.mertgundoganx.moviesapp.data.model.Movie
 import com.mertgundoganx.moviesapp.databinding.MoviesFragmentBinding
 import com.mertgundoganx.moviesapp.utils.Status
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MoviesFragment : Fragment(), MoviesAdapter.OnItemClickListener {
 
     private val viewModel: MoviesViewModel by viewModels()
