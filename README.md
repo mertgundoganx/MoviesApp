@@ -16,6 +16,7 @@ Movies App is a simple Android application written by Kotlin that shows popular 
 - Jetpack libraries
     - Lifecycle 
     - Navigation
+    - Hilt
 
 ## License
 
